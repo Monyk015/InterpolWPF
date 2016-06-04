@@ -1,0 +1,56 @@
+﻿<Window x:Class="InterpolWPF.EditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InterpolWPF"
+        mc:Ignorable="d"
+        Title="Edit" Height="786.153" Width="356.604">
+    <Grid Margin="0,0,2,-21">
+        <TextBox x:Name="NameTextBox" Height="19" Margin="112,7,10,0" TextWrapping="Wrap" VerticalAlignment="Top" GotFocus="TextBox_GotFocus" Foreground="Black"/>
+        <TextBox x:Name="SurnameTextBox" Height="19" Margin="112,31,10,0" TextWrapping="Wrap" VerticalAlignment="Top" GotFocus="TextBox_GotFocus" Foreground="Black"/>
+        <TextBox x:Name="NicknameTextBox" Height="19" Margin="112,55,10,0" TextWrapping="Wrap" VerticalAlignment="Top" GotFocus="TextBox_GotFocus" Foreground="Black"/>
+        <TextBox x:Name="EyeColorTextBox" Height="19" Margin="112,80,10,0" TextWrapping="Wrap" VerticalAlignment="Top" GotFocus="TextBox_GotFocus" Foreground="Black"/>
+        <TextBox x:Name="HairColorTextBox" Height="19" Margin="112,103,10,0" TextWrapping="Wrap" VerticalAlignment="Top" GotFocus="TextBox_GotFocus" Foreground="Black"/>
+        <TextBox x:Name="HeightTextBox" Height="19" Margin="112,127,10,0" TextWrapping="Wrap" VerticalAlignment="Top" GotFocus="TextBox_GotFocus" Foreground="Black"/>
+        <DatePicker x:Name="BirthDatePicker" Margin="112,149,10,0" VerticalAlignment="Top" Focusable="False" Text="Birth Date" Height="22"/>
+        <Label x:Name="label" Content="Birth Date:" HorizontalAlignment="Left" Margin="10,147,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="CitizenshipTextBox" Height="19" Margin="112,175,10,0" TextWrapping="Wrap" VerticalAlignment="Top" GotFocus="TextBox_GotFocus" Foreground="Black"/>
+        <TextBox x:Name="BirthPlaceTextBox" Height="19" Margin="112,199,10,0" TextWrapping="Wrap" VerticalAlignment="Top" GotFocus="TextBox_GotFocus" Foreground="Black"/>
+        <TextBox x:Name="LastLivingPlaceTextBox" Height="19" Margin="112,223,10,0" TextWrapping="Wrap" VerticalAlignment="Top" GotFocus="TextBox_GotFocus" Foreground="Black"/>
+        <TextBox x:Name="LastCaseTextBox" Height="19" Margin="112,247,10,0" TextWrapping="Wrap" VerticalAlignment="Top" GotFocus="TextBox_GotFocus" Foreground="Black"/>
+        <TextBox x:Name="ProfessionTextBox" Height="19" Margin="112,271,10,0" TextWrapping="Wrap" VerticalAlignment="Top" GotFocus="TextBox_GotFocus" Foreground="Black"/>
+        <TextBox x:Name="DistinguishingTraitsTextBox" Height="19" Margin="112,296,10,0" TextWrapping="Wrap" VerticalAlignment="Top" GotFocus="TextBox_GotFocus" Foreground="Black"/>
+        <TextBox x:Name="LanguagesTextBox" Height="19" Margin="112,319,10,0" TextWrapping="Wrap" VerticalAlignment="Top" GotFocus="TextBox_GotFocus" Foreground="Black"/>
+        <ListBox x:Name="AccomplicesListBox" Height="88" Margin="112,343,10,0" VerticalAlignment="Top" SelectionMode="Multiple"/>
+        <Label x:Name="label1" Content="Name:" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top" Height="26" Width="102"/>
+        <Label x:Name="label1_Copy" Content="Surname:" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Height="26" Width="102"/>
+        <Label x:Name="label1_Copy1" Content="Eye Color:" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Height="26" Width="102"/>
+        <Label x:Name="label1_Copy2" Content="Nickname:" HorizontalAlignment="Left" Margin="10,53,0,0" VerticalAlignment="Top" Height="26" Width="102"/>
+        <Label x:Name="label1_Copy3" Content="Hair Color:" HorizontalAlignment="Left" Margin="10,99,0,0" VerticalAlignment="Top" Height="26" Width="102"/>
+        <Label x:Name="label1_Copy4" Content="Height:" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top" Height="26" Width="102"/>
+        <Label x:Name="label1_Copy5" Content="Citizenship:" HorizontalAlignment="Left" Margin="10,171,0,0" VerticalAlignment="Top" Height="26" Width="102"/>
+        <Label x:Name="label1_Copy6" Content="Birth Place:" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top" Height="26" Width="102"/>
+        <Label x:Name="label1_Copy7" Content="Last Living Place:" HorizontalAlignment="Left" Margin="10,219,0,0" VerticalAlignment="Top" Height="26" Width="102"/>
+        <Label x:Name="label1_Copy8" Content="Last Case:" HorizontalAlignment="Left" Margin="10,243,0,0" VerticalAlignment="Top" Height="26" Width="102"/>
+        <Label x:Name="label1_Copy9" Content="Profession:" HorizontalAlignment="Left" Margin="10,267,0,0" VerticalAlignment="Top" Height="26" Width="102"/>
+        <Label x:Name="label1_Copy10" Content="Dist. Traits:" HorizontalAlignment="Left" Margin="10,291,0,0" VerticalAlignment="Top" Height="26" Width="122"/>
+        <Label x:Name="label1_Copy11" Content="Languages:" HorizontalAlignment="Left" Margin="10,315,0,0" VerticalAlignment="Top" Height="26" Width="122"/>
+        <Label x:Name="label1_Copy12" Content="Accomplices:" HorizontalAlignment="Left" Margin="10,343,0,0" VerticalAlignment="Top" Height="26" Width="122"/>
+        <TreeView x:Name="treeView" Height="131" Margin="10,439,10,0" VerticalAlignment="Top" MouseDoubleClick="treeView_MouseDoubleClick">
+            <TreeView.Resources>
+                <ContextMenu x:Key ="SolutionContext"  StaysOpen="true">
+                    <MenuItem Header="Add" Click="MenuItem_Add"/>
+                </ContextMenu>
+            </TreeView.Resources>
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate DataType="{x:Type local:Crimes}" ItemsSource="{Binding Children}">
+                    <TextBlock Text="{Binding Name}" />
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+        <ListBox x:Name="CrimesListBox" Height="116" Margin="10,575,10,0" VerticalAlignment="Top" MouseDoubleClick="CrimesListBox_MouseDoubleClick"/>
+        <Button x:Name="SaveButton" Content="Save" Margin="0,717,136,0" VerticalContentAlignment="Center" Click="SaveButton_Click" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75"/>
+
+    </Grid>
+</Window>

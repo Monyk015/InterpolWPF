@@ -11,10 +11,39 @@
             <ColumnDefinition Width="309*"/>
             <ColumnDefinition Width="302*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dataGrid" Margin="10,35,18,10" SelectionMode="Single" CanUserAddRows="False" UseLayoutRounding="False" Grid.ColumnSpan="2" HeadersVisibility="Column"/>
+        <DataGrid x:Name="dataGrid" Margin="10,34,18,10" SelectionMode="Single" CanUserAddRows="False" UseLayoutRounding="False" Grid.ColumnSpan="2" HeadersVisibility="Column" AutoGenerateColumns="False">
+            <DataGrid.ContextMenu>
+                <ContextMenu AllowDrop="True">
+                    <MenuItem Header="Delete" Click="Delete_OnClick" PreviewKeyDown="MenuItem_PreviewKeyDown">
+                    </MenuItem>
+                    <MenuItem Header="View/Edit" Click="Edit_OnClick"></MenuItem>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Name, Mode=TwoWay}" Header="Name"/>
+                <DataGridTextColumn Binding="{Binding Surname, Mode=TwoWay}" Header="Surname"/>
+                <DataGridTextColumn Binding="{Binding Nickname, Mode=TwoWay}"  Header="Nickname"/>
+                <DataGridTextColumn Binding="{Binding Height, Mode=TwoWay}"  Header="Height"/>
+                <DataGridTextColumn Binding="{Binding EyeColor, Mode=TwoWay}"  Header="Eye Color"/>
+                <DataGridTextColumn Binding="{Binding HairColor, Mode=TwoWay}"  Header="Hair Color"/>
+                <DataGridTextColumn Binding="{Binding Citizenship, Mode=TwoWay}"  Header="Citizenship"/>
+                <DataGridTextColumn Binding="{Binding BirthDate, Mode=TwoWay}"  Header="Birth Date"/>
+                <DataGridTextColumn Binding="{Binding Languages, Mode=TwoWay}"  Header="Languages"/>
+                <DataGridTextColumn Binding="{Binding DistinguishingTraits, Mode=TwoWay}"  Header="Distingiushing Traits"/>
+                <DataGridTextColumn Binding="{Binding BirthPlace, Mode=TwoWay}"  Header="Birth Place"/>
+                <DataGridTextColumn Binding="{Binding LastLivingPlace, Mode=TwoWay}" Header="Last Living Place"/>
+                <DataGridTextColumn Binding="{Binding LastCase, Mode=TwoWay}" Header="Last Case"/>
+                <DataGridTextColumn Binding="{Binding Profession, Mode=TwoWay}" Header="Profession"/>
+            </DataGrid.Columns>
+        </DataGrid>
         <Button x:Name="AddButton" Content="Add" HorizontalAlignment="Left" Margin="360,9,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" Click="AddButton_Click"/>
-        <Button x:Name="FindButton" Content="Find" HorizontalAlignment="Left" Margin="52,9,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
+        <Button x:Name="FindButton" Content="Find" HorizontalAlignment="Left" Margin="52,9,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="FindButton_Click"/>
         <TextBox x:Name="SearchTextBox" HorizontalAlignment="Left" Height="20" Margin="154,9,0,0" TextWrapping="Wrap" Text="Global Search..." VerticalAlignment="Top" Width="208" TextChanged="SearchTextBox_TextChanged" IsHitTestVisible="True" Grid.Column="1" GotFocus="SearchTextBox_GotFocus" LostFocus="SearchTextBox_LostFocus"/>
+        <Button x:Name="SaveButton" Content="Save" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Width="75" Height="20"/>
+        <WrapPanel Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="100" Margin="376,201,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="SyncButton" Content="Sync" HorizontalAlignment="Left" Margin="90,9,0,0" VerticalAlignment="Top" Width="75" Click="SyncButton_Click"/>
+        <Button x:Name="AboutButton" Content="About" HorizontalAlignment="Left" Margin="170,9,0,0" VerticalAlignment="Top" Width="75" Click="AboutButton_Click"/>
+        <Button x:Name="SomeChartsButton" Content="Some Charts" HorizontalAlignment="Left" Margin="266,9,0,0" VerticalAlignment="Top" Width="75" Click="SomeChartsButton_Click" Height="20"/>
 
     </Grid>
 </Window>

@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace InterpolWPF
 {
     /// <summary>
-    /// Логика взаимодействия для Window1.xaml
+    /// Логика взаимодействия для About.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class About : Window
     {
-        public Window1()
+        public About()
         {
             InitializeComponent();
         }
