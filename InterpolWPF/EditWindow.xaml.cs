@@ -29,7 +29,7 @@ namespace InterpolWPF
             var properties = typeof(BadBoy).GetProperties();
             foreach (var property in properties)
             {
-                if (property.Name != "Accomplices" && property.Name != "BirthDate" && property.Name != "Crimes")
+                if (property.Name != "Accomplices" && property.Name != "BirthDate" && property.Name != "crimes" && property.Name != "Crimes")
                 {
                     var textBox =
                         (TextBox)
@@ -113,7 +113,7 @@ namespace InterpolWPF
 
         private void treeView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            current.Crimes.Add((Crimes) treeView.SelectedItem);
+            current.Crimes.Add((Crimes)(treeView.SelectedItem == Crimes.AllCrimes ? Crimes.AllCrimes[0] : treeView.SelectedItem));
             CrimesListBox.ItemsSource = null;
             CrimesListBox.ItemsSource = current.Crimes;
         }

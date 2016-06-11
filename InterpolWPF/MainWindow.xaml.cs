@@ -241,10 +241,10 @@ namespace InterpolWPF
 
         private void SomeChartsButton_Click(object sender, RoutedEventArgs e)
         {
-            var chartsForm = new ChartsForm();
+            var chartsWindow = new ChartsWindow();
             //WindowInteropHelper wih = new WindowInteropHelper(this);
             //wih.Owner = chartsForm.Handle;
-            chartsForm.Show();
+            chartsWindow.Show();
         }
     }
 }

@@ -120,7 +120,7 @@ namespace InterpolWPF
 
         private void treeView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            crimesList.Add((Crimes)treeView.SelectedItem);
+            crimesList.Add((Crimes)(treeView.SelectedItem == Crimes.AllCrimes ? Crimes.AllCrimes[0] : treeView.SelectedItem));
             CrimesListBox.ItemsSource = null;
             CrimesListBox.ItemsSource = crimesList;
         }

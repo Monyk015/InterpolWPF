@@ -70,11 +70,8 @@
     <Compile Include="About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ChartsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChartsForm.Designer.cs">
-      <DependentUpon>ChartsForm.cs</DependentUpon>
+    <Compile Include="ChartsWindow.xaml.cs">
+      <DependentUpon>ChartsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Crimes.cs" />
     <Compile Include="EditWindow.xaml.cs">
@@ -84,6 +81,10 @@
       <DependentUpon>AddWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChartsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,9 +125,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="ChartsForm.resx">
-      <DependentUpon>ChartsForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

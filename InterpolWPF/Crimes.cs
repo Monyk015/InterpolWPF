@@ -117,5 +117,16 @@ namespace InterpolWPF
         {
             return Name;
         }
+
+        public Crimes findWithCode(Crimes toFind)
+        {
+            if (this.Code == toFind.Code)
+                return this;
+            else
+            {
+                var fine = this.Children.Where(crime => crime.isSuccessor(toFind)).ToArray()[0];
+                return fine.findWithCode(toFind);
+            }
+        }
     }
 }
